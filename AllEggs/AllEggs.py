@@ -1,6 +1,3 @@
-from numpy import product
-
-
 product={'gallina' : 0,
          'pato' : 0,
          'codorniz' : 0,
