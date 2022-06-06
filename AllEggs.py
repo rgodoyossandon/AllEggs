@@ -17,7 +17,7 @@ while(True):
     print("3. Listar Huevos")
     print("4. Listar despacho")
     try:
-        opc = int(input("Seleccionar opcion:"))
+        opc = int(input("Seleccionar opcion: "))
         if (opc == 1):
             os.system('cls')
             while(True):
@@ -27,7 +27,7 @@ while(True):
                 print("4. Huevo Avestruz")
                 print("5. Volver al menu")
                 try:
-                    opc1 = int(input("Seleccionar una opcion:")) 
+                    opc1 = int(input("Seleccionar una opcion: ")) 
                     if (opc1 == 1):
                         try:
                             gallina = int(input("Ingrese el valor del huevo (valor minimo $50 pesos):"))
@@ -80,19 +80,20 @@ while(True):
         elif (opc == 2):
             os.system('cls')
             cont +=1
-            nombre = input("Ingresar Nombre o Razon Social:")
-            rut = input("Ingrese el Rut")
-            tipo = input("Indique el tipo de huevo: Gallina, Pato, Codorniz o Avestruz:")
-            convenio = input("Idicar si cliente posee convenio: 1. Si 2. No")
-            direccion =input("Ingrese direccion de envio:")
-            fecha = input('Indicar fecha de compromiso:')
-            cantidad = int(input("Ingrese la cantidad de huevos (venta minima 50 - venta maxima 10000):"))
+            nombre = input("Ingresar Nombre o Razon Social: ")
+            rut = input("Ingrese el Rut: ")
+            tipo = input("Indique el tipo de huevo: Gallina, Pato, Codorniz o Avestruz: ")
+            convenio = input("Idicar si cliente posee convenio: 1. Si 2. No: ")
+            direccion =input("Ingrese direccion de envio: ")
+            fecha = input('Indicar fecha de compromiso: ')
+            cantidad = int(input("Ingrese la cantidad de huevos (venta minima 50 - venta maxima 10000): "))
             if (cantidad < 50 or cantidad > 10000):
                 print("El valor ingresado no corresponde a los parametros solicitados. Se asigna 50 unidades de huevos al cliente.")
                 cantidad = 50
-            tipe = tipo.lower()    
+            tipe = tipo.lower()
+            conve = convenio.lower()    
             if(convenio.lower() == "si"):
-                total = (int(product[tipo.lower()])*cantidad)*0.1
+                total = (int(product[tipo.lower()])*cantidad)*0.9
                 client ['idkey'+str(cont)] = nombre, rut, tipo, convenio, direccion, fecha, cantidad, total
             else:
                total = (int(product[tipo.lower()])*int(cantidad))
