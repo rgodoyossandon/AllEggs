@@ -2,21 +2,16 @@ from msilib.schema import AdminExecuteSequence
 from multiprocessing.connection import Client
 from function import *
 
-product={'gallina' : 0,
-         'pato' : 0,
-         'codorniz' : 0,
-         'avestruz' : 0}
 client={}
 cont =0 
+
+
 
 login()
 
 while(True):
-    print("1. Asignacion")
-    print("2. Creacion")                                                
-    print("3. Listar Huevos")
-    print("4. Listar despacho")
     try:
+        menu() 
         opc = int(input("Seleccionar opcion: "))
         if (opc == 1):
             os.system('cls')
@@ -98,15 +93,14 @@ while(True):
             else:
                total = (int(product[tipo.lower()])*int(cantidad))
                client ['idkey'+str(cont)] = nombre, rut, tipo, convenio, direccion, fecha, cantidad, total
-            
-            print (client[tipe])
+            print ("Registor completado con exito")
+            input("Favor presiene una tecla para continuar")
         elif (opc == 3):
-            os.system('cls')
-            print(product)
+            system('cls')
+            listeggs()
         elif (opc == 4):
-            os.system('cls')
-            #print (client[tipe])
-            print (client)
+            print(client)
+            input('Presione una tecla para continuar')
         elif (opc == 5):
             print("Gracia, vuelva pronto")
             break
